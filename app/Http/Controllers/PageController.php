@@ -13,13 +13,13 @@ class PageController extends Controller
 
     public function dashboard(Request $request)
     {
-        $username = $request->input('username', 'Reader');
+        $username = $request->input('username');
         return view('dashboard', compact('username'));
     }
 
     public function pengelolaan(Request $request)
     {
-        $username = $request->input('username', 'Reader');
+        $username = $request->input('username');
 
         $books = [
             [
@@ -64,7 +64,7 @@ class PageController extends Controller
 
     public function profile(Request $request)
     {
-        $username = $request->input('username', 'Reader');
+        $username = $request->input('username');
         return view('profile', compact('username'));
     }
 }

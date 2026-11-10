@@ -1,58 +1,46 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# LiteraStore - General Bookstore (UTS Project)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+LiteraStore adalah aplikasi web e-commerce perpustakaan dan toko buku umum berbasis **Laravel MVC** dengan estetika desain minimalis, hangat, dan elegan. Proyek ini dikembangkan untuk memenuhi Ujian Tengah Semester (UTS) mata kuliah pemrograman web dengan menerapkan arsitektur *Model-View-Controller*, pemrosesan data array, serta penanganan request parameter tanpa menggunakan database.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🎨 Desain & Tema Estetika
+* **Tema Warna:** *Warm Cream / Off-White* (`#f7f5f0`) sebagai latar belakang, dikombinasikan dengan aksen *Forest Green* (`#2c3e35`) yang elegan dan teks cokelat tua hangat (`#2c2a29`).
+* **Tipografi:** Menggunakan kombinasi font serif klasik (*Playfair Display*) dan sans-serif bersih (*Plus Jakarta Sans*).
+* **Desain UI/Responsive:** Dibangun menggunakan kerangka utilitas **Tailwind CSS** agar responsif di berbagai ukuran layar perangkat.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 📸 Preview Interface (Halaman Login)
+Tampilan halaman login LiteraStore:
+<img width="1365" height="600" alt="image" src="https://github.com/user-attachments/assets/0bde943b-efee-494b-b23a-da802ec347d5" />
+Tampilan halaman dashboard LiteraStore:
+<img width="1350" height="597" alt="image" src="https://github.com/user-attachments/assets/51e43564-bd41-44ae-9a0d-833e8b4df5f7" />
+Tampilan halaman pengelolaan LiteraStore:
+<img width="1344" height="600" alt="image" src="https://github.com/user-attachments/assets/ceef8f55-aa35-496c-bda6-a3d3fb490682" />
+Tampilan halaman profile LiteraStore:
+<img width="1361" height="598" alt="image" src="https://github.com/user-attachments/assets/6cb67a19-114a-4881-92fd-ef94eab3b5a4" />
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 📂 Struktur File Utama (Minimal 9+ Files)
+Proyek ini terorganisir ke dalam struktur MVC Laravel yang bersih:
+1. `routes/web.php` - Pusat pengaturan rute/URL aplikasi.
+2. `app/Http/Controllers/PageController.php` - Controller utama yang mengatur logika dan pengiriman data.
+3. `resources/views/layouts/app.blade.php` - Layout utama kerangka halaman web.
+4. `resources/views/components/navbar.blade.php` - Komponen navigasi atas (navbar).
+5. `resources/views/components/footer.blade.php` - Komponen bagian bawah (footer).
+6. `resources/views/login.blade.php` - Halaman login input username pembaca.
+7. `resources/views/dashboard.blade.php` - Halaman utama sambutan pembaca (Dashboard).
+8. `resources/views/pengelolaan.blade.php` - Halaman katalog buku dengan rendering array data (`@foreach`).
+9. `resources/views/profile.blade.php` - Halaman informasi profil pembaca.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## ⚙️ Routing & Data Flow
+* **Root (`/`)**: Menampilkan halaman login (`login.blade.php`).
+* **Dashboard (`/dashboard`)**: Menerima parameter `username` dari input form menggunakan `$request->input('username', 'Reader')` dan menampilkannya secara dinamis.
+* **Katalog Buku (`/pengelolaan`)**: Merender daftar data array buku menggunakan struktur perulangan Blade `@foreach`.
+* **Profil (`/profile`)**: Menampilkan detail ringkas akun pengguna berdasarkan sesi request.
 
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
-```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
-```
-
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
